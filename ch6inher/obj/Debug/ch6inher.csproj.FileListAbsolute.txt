@@ -1,0 +1,10 @@
+c:\users\ratache\documents\visual studio 2012\Projects\ch6inher\ch6inher\bin\Debug\ch6inher.exe.config
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\bin\Debug\ch6inher.exe.config
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\bin\Debug\ch6inher.exe
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\bin\Debug\ch6inher.pdb
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\obj\Debug\ch6inher.csprojResolveAssemblyReference.cache
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\obj\Debug\ch6inher.Form1.resources
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\obj\Debug\ch6inher.Properties.Resources.resources
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\obj\Debug\ch6inher.csproj.GenerateResource.Cache
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\obj\Debug\ch6inher.exe
+C:\Users\Per\Dropbox\Project Koan\Projects\ch6inher\ch6inher\obj\Debug\ch6inher.pdb
