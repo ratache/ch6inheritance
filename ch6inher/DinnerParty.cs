@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace ch6inher
 {
-    class DinnerParty
+    class DinnerParty:Party
     {
         //Variables
-        private int NumberOfPeople;
         private decimal CostOfBeveragesPerPerson;
-        private decimal CostOfDecorations;
-        //Constants
-        private const int CostOfFoodPerPerson = 25;
+
         //Flags
         private bool healthyFlag;
-        private bool decorationFlag;
 
         public DinnerParty(int NumberOfPeople, bool dflag, bool hflag)
         {
-            this.NumberOfPeople = NumberOfPeople;
+            this.numberOfPeople = NumberOfPeople;
             this.healthyFlag = hflag;
-            this.decorationFlag = dflag;
+            this.fancyDecor = dflag;
         }
 
         /// <summary>
@@ -30,12 +26,12 @@ namespace ch6inher
         /// </summary>
         private void CalculateCostOfDecorations(bool dflag)
         {
-            decorationFlag = dflag;
+            fancyDecor = dflag;
 
-            if (decorationFlag)
-            { CostOfDecorations = (NumberOfPeople * 15M) + 50M; }
+            if (fancyDecor)
+            { costOfDecor = (numberOfPeople * 15M) + 50M; }
             else
-            { CostOfDecorations = (NumberOfPeople * 7.5M) + 30M; }
+            { costOfDecor = (numberOfPeople * 7.5M) + 30M; }
         }
 
         private void HealthyOption(bool hflag)
@@ -58,11 +54,11 @@ namespace ch6inher
         /// <returns></returns>
         public decimal CalculateCost(int numberOfPeople, bool hflag, bool dflag)
         {
-            this.NumberOfPeople = numberOfPeople;
+            this.numberOfPeople = numberOfPeople;
             HealthyOption(hflag);
             CalculateCostOfDecorations(dflag);
 
-            decimal Total = CostOfDecorations + ((CostOfBeveragesPerPerson + CostOfFoodPerPerson) * NumberOfPeople);
+            decimal Total = costOfDecor + ((CostOfBeveragesPerPerson + costOfFoodPerPerson) * numberOfPeople);
 
             if (numberOfPeople > 11)
                 Total += 100M;

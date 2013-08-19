@@ -7,20 +7,16 @@ using System.Windows.Forms;
 
 namespace ch6inher
 {
-    class BirthdayParty
+    class BirthdayParty:Party
     {
-        public const int costOfFoodPerPerson = 25;//price constant
-        public decimal costOfDecorations = 0;//the cost of the decor
-        public int cakeSize;//size of cake depending on attendees
-
-        private bool fancyDecorations;//the option for fancy decor
+        private int cakeSize;//size of cake depending on attendees
 
         public BirthdayParty(int NumberOfPeople, bool FancyDecor, string CakeWriting)
         {
             this.numberOfPeople = NumberOfPeople;
             CalcCakeSize();
+            CalculateCostofDecor(FancyDecor);
             this.cakeWriting = CakeWriting;
-            CalculateCostofDecor(fancyDecorations);
         }
 
         /// <summary>
@@ -38,9 +34,12 @@ namespace ch6inher
         /// The whole shebang, calculates the whole party cost.
         /// </summary>
         /// <returns></returns>
-        public decimal CalculateCost()
+        public decimal CalculateCost(int numbersValue, bool FancyDecor)
         {
-            decimal totalCost = costOfDecorations + (costOfFoodPerPerson * numberOfPeople);
+            this.numberOfPeople = numbersValue;
+            this.fancyDecor = FancyDecor;
+
+            decimal totalCost = costOfDecor + (costOfFoodPerPerson * numberOfPeople);
             decimal cakeCost;
 
             if(cakeSize==8)
@@ -54,23 +53,8 @@ namespace ch6inher
             return totalCost + cakeCost;
         }
 
-        /// <summary>
-        /// Calculates the cost of the decor depending on decor option and attendees. There is also
-        /// a cost constant added (50 or 30).
-        /// </summary>
-        /// <param name="isitFancy">bool</param>
-        public void CalculateCostofDecor(bool isitFancy)
-        {
-            fancyDecorations = isitFancy;
-            if (fancyDecorations)
-                costOfDecorations = (numberOfPeople * 15.00M) + 50M;
-            else
-                costOfDecorations = (numberOfPeople * 7.50M) + 30M;
-        }
-
         //PROPERTIES
         private string cakeWriting = "";//what to be written on the cake
-        private int numberOfPeople;//amount of attendees
 
         /// <summary>
         /// Property for the cakewriting process. Makes inserted
@@ -96,19 +80,6 @@ namespace ch6inher
                 }
                 else
                     this.cakeWriting = value;
-            }
-        }
-
-        public int NumberOfPeople
-        {
-            get { return numberOfPeople; }
-            set
-            {
-                numberOfPeople = value;
-
-                CalculateCostofDecor(fancyDecorations);
-                CalcCakeSize();
-                this.CakeWriting = cakeWriting;//runs the cakewriting property
             }
         }
     }

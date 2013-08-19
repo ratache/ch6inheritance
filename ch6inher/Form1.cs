@@ -21,16 +21,15 @@ namespace ch6inher
             InitializeComponent();
             
             //Init dinnerparty interface
-            dinnerParty = new DinnerParty(1, cbDinnerFancy.Checked, cbDinnerHealthy.Checked);
+            dinnerParty = new DinnerParty((int)numericUnDdinner.Value, cbDinnerFancy.Checked, cbDinnerHealthy.Checked);
             DisplayDinnerPartyCost();
 
             //Init birthdayparty interface
-            birthdayParty = new BirthdayParty(1, cbBirthdayFancy.Checked, tbCakeWrit.Text);
+            birthdayParty = new BirthdayParty((int)numUnDBirthday.Value, cbBirthdayFancy.Checked, tbCakeWrit.Text);
             DisplayBirthdayPartyCost();
-
         }
 
-        //Eventhandlers
+        //Dinner Events
         private void numericUnDdinner_ValueChanged(object sender, EventArgs e)
         {
             DisplayDinnerPartyCost();
@@ -46,6 +45,7 @@ namespace ch6inher
             DisplayDinnerPartyCost();
         }
 
+        //Birthday Events
         private void tbCakeWrit_TextChanged(object sender, EventArgs e)
         {
             birthdayParty.CakeWriting = tbCakeWrit.Text;
@@ -54,7 +54,7 @@ namespace ch6inher
 
         private void numUnDBirthday_ValueChanged(object sender, EventArgs e)
         {
-            birthdayParty.NumberOfPeople = (int)numUnDBirthday.Value;
+            birthdayParty.numberOfPeople = (int)numUnDBirthday.Value;
             DisplayBirthdayPartyCost();
         }
 
@@ -73,8 +73,7 @@ namespace ch6inher
 
         private void DisplayBirthdayPartyCost()
         {
-            tbCakeWrit.Text = birthdayParty.CakeWriting;
-            decimal cost = birthdayParty.CalculateCost();
+            decimal cost = birthdayParty.CalculateCost((int)numUnDBirthday.Value, cbBirthdayFancy.Checked);
             lblCostBirthday.Text = cost.ToString("c");
 
         }

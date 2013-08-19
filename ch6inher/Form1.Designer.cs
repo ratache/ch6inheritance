@@ -94,9 +94,9 @@
             this.cbDinnerFancy.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDinnerFancy.Location = new System.Drawing.Point(6, 85);
             this.cbDinnerFancy.Name = "cbDinnerFancy";
-            this.cbDinnerFancy.Size = new System.Drawing.Size(115, 17);
+            this.cbDinnerFancy.Size = new System.Drawing.Size(89, 17);
             this.cbDinnerFancy.TabIndex = 12;
-            this.cbDinnerFancy.Text = "Fancy Decorations";
+            this.cbDinnerFancy.Text = "Fancy Option";
             this.cbDinnerFancy.UseVisualStyleBackColor = true;
             this.cbDinnerFancy.CheckedChanged += new System.EventHandler(this.cbDinnerFancy_CheckedChanged);
             // 
@@ -234,7 +234,7 @@
             this.numUnDBirthday.Size = new System.Drawing.Size(120, 20);
             this.numUnDBirthday.TabIndex = 1;
             this.numUnDBirthday.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});
