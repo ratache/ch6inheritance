@@ -13,6 +13,12 @@ public class Party
     //Flags
     internal bool fancyDecor;
 
+    public Party(int numOp, bool isitFancy)
+    {
+        this.numberOfPeople = numOp;
+        this.fancyDecor = isitFancy;
+    }
+
     /// <summary>
     /// Calculates the cost of the decor depending on decor option and attendees. There is also
     /// a cost constant added (50 or 30).

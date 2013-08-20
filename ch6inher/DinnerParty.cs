@@ -14,24 +14,10 @@ namespace ch6inher
         //Flags
         private bool healthyFlag;
 
-        public DinnerParty(int NumberOfPeople, bool dflag, bool hflag)
+        public DinnerParty(int numOp, bool dflag, bool hflag):base(numOp, hflag)
         {
-            this.numberOfPeople = NumberOfPeople;
-            this.healthyFlag = hflag;
+            this.numberOfPeople = numOp;
             this.fancyDecor = dflag;
-        }
-
-        /// <summary>
-        /// Methods
-        /// </summary>
-        private void CalculateCostOfDecorations(bool dflag)
-        {
-            fancyDecor = dflag;
-
-            if (fancyDecor)
-            { costOfDecor = (numberOfPeople * 15M) + 50M; }
-            else
-            { costOfDecor = (numberOfPeople * 7.5M) + 30M; }
         }
 
         private void HealthyOption(bool hflag)
@@ -56,7 +42,7 @@ namespace ch6inher
         {
             this.numberOfPeople = numberOfPeople;
             HealthyOption(hflag);
-            CalculateCostOfDecorations(dflag);
+            CalculateCostofDecor(dflag);
 
             decimal Total = costOfDecor + ((CostOfBeveragesPerPerson + costOfFoodPerPerson) * numberOfPeople);
 

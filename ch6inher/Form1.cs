@@ -73,7 +73,7 @@ namespace ch6inher
 
         private void DisplayBirthdayPartyCost()
         {
-            decimal cost = birthdayParty.CalculateCost((int)numUnDBirthday.Value, cbBirthdayFancy.Checked);
+            decimal cost = birthdayParty.CalculateCost((int)numUnDBirthday.Value);
             lblCostBirthday.Text = cost.ToString("c");
 
         }

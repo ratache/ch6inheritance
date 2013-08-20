@@ -11,9 +11,8 @@ namespace ch6inher
     {
         private int cakeSize;//size of cake depending on attendees
 
-        public BirthdayParty(int NumberOfPeople, bool FancyDecor, string CakeWriting)
+        public BirthdayParty(int NumberOfPeople, bool FancyDecor, string CakeWriting):base(NumberOfPeople, FancyDecor)
         {
-            this.numberOfPeople = NumberOfPeople;
             CalcCakeSize();
             CalculateCostofDecor(FancyDecor);
             this.cakeWriting = CakeWriting;
@@ -34,10 +33,9 @@ namespace ch6inher
         /// The whole shebang, calculates the whole party cost.
         /// </summary>
         /// <returns></returns>
-        public decimal CalculateCost(int numbersValue, bool FancyDecor)
+        public decimal CalculateCost(int numbersValue)
         {
             this.numberOfPeople = numbersValue;
-            this.fancyDecor = FancyDecor;
 
             decimal totalCost = costOfDecor + (costOfFoodPerPerson * numberOfPeople);
             decimal cakeCost;
